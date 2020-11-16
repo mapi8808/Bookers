@@ -3,7 +3,7 @@ class BooksController < ApplicationController
     
   end
   
-  def books
+  def index
      # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する。
      @books = Book.all
   end
@@ -17,6 +17,7 @@ class BooksController < ApplicationController
     book = Book.new(books_params)
     book.save
     redirect_to book_path(book.id)
+
   end
 
   def edit
