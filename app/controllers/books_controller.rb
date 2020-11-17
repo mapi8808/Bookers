@@ -20,9 +20,11 @@ class BooksController < ApplicationController
     @books = Book.find(params[:id])  
   end
   
+  
+  
   private
   def books_params
-  params.permit(:title, :body)
+   params.permit(:title, :body)
   end
 
   
