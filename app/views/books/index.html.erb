@@ -4,9 +4,9 @@
   <span><%= book.title %></span>
   <p>Body</p>
   <span><%= book.body %></span>
-  <%= link_to "Show",edit_book_path(book.id) %>
+  <%= link_to "Show",book_path(book.id) %>
   <%= link_to "Edit",edit_book_path(book.id) %>
-  <%= link_to "Destroy",edit_book_path(book.id) %>
+  <%= link_to "Destroy", books_path(book.id), method: :delete %>
   <% end %>
   
 
