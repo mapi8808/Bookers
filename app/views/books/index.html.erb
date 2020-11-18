@@ -1,11 +1,12 @@
 <h1>Books</h1>
- <p>Title</p><p>Body</p>
+ <p>Title</p>
+ <p>Body</p>
 <% @books.each do |book| %>
   <span><%= book.title %></span>
   <span><%= book.body %></span>
   <%= link_to "Show",book_path(book.id) %>
   <%= link_to "Edit",edit_book_path(book.id) %>
-  <%= link_to "Destroy", book, method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Destroy", books_path(@book), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
   
 
