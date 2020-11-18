@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   def create
   book = Book.new(books_params)
   book.save
-  redirect_to books_path(book.id)
+  redirect_to book_path(book.id)
   end
 
   def edit
@@ -37,6 +37,4 @@ class BooksController < ApplicationController
    flash[:notice] = "Book was successfully destroyed."
    redirect_to books_path
   end
-  
- 
 end
