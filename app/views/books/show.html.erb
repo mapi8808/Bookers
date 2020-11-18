@@ -1,11 +1,10 @@
- <p>
-  <strong>Title:</strong>
-  リーダブルコード
-</p>
+<h2>Title</h2>
+<p><%= @book.title %></p>
+<h2>Body</h2>
+<p><%= @book.body %></p>
+<h2>画像</h2>
+<%= link_to "Edit", edit_book_path(@book.id) %>
 
-<p>
-  <strong>Body:</strong>
-  
-</p>
+<%= link_to "Back", books_path %>
 
 
