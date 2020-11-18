@@ -14,14 +14,18 @@
  *= require_self
  */
 
+
+
 table{
   width: 100%;
 }
 
 td{
   width: 30%;
+  text-align: left;
 }
 th{
   padding-bottom: 5px;
+  text-align: center;
 }
 
