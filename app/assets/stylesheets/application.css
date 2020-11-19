@@ -13,19 +13,22 @@
  *= require_tree .
  *= require_self
  */
-
-
+ 
+ .flash{
+color: green;
+}
 
 table{
   width: 100%;
 }
 
-td{
-  width: 30%;
-  text-align: left;
-}
 th{
-  padding-bottom: 5px;
-  text-align: center;
+  width: 50%;
+
 }
+
+td{
+  width: 50%;
+}
+
 

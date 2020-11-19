@@ -1,3 +1,10 @@
+<% if flash[:destroy] %>
+      <div class="flash">
+        <%= flash[:destroy] %>
+      </div>
+ <% end %>
+
+
 <h1>Books</h1>
 <table>
     <thead>
@@ -9,19 +16,17 @@
     </thead>
     
   <tbody>
-  <tr>
   <% @books.each do |book| %>
+  
   <td><%= book.title %></td>
    <td><%= book.body %></td>
    <td><%= link_to 'Show', book_path(book.id), class:"show_#{book.id}" %></td>
     <td><%= link_to "Edit", edit_book_path(book.id), class:"edit_#{book.id}" %></td>
-    <td><%= link_to 'Destroy', books_path(book.id), method: :delete, data: { confirm: "Are you sure?" }, class:"destroy_#{book.id}" %></td>
+    <td><%= link_to 'Destroy', book_path(book.id), method: :delete, data: { confirm: "Are you sure?" }, class:"destroy_#{book.id}" %></td>
    </tr>
      <% end %>
    </tbody>
   </table>
-  
-
   
 
 <h1>New Books</h1>
