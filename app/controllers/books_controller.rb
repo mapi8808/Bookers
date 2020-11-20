@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
   def show
   @book = Book.find(params[:id])
+  
   end
 
   def create
@@ -16,9 +17,10 @@ class BooksController < ApplicationController
   flash[:notice] = "Book was successfully created."
   redirect_to book_path(@book.id)
   else
-      render("books")
-  end  
+      render ["books"]
   end
+  end  
+  
 
   def edit
     @books = Book.find(params[:id])  
@@ -44,6 +46,6 @@ class BooksController < ApplicationController
   
   private
   def books_params
-   params.require(:book).permit(:title, :body)
+  params.permit(:title, :body)
   end
 end
