@@ -28,10 +28,21 @@
    </tbody>
   </table>
   
-
+  
 <h1>New Books</h1>
 <!-- form_with部分 -->
-<%= form_with model:@book, local:true do |f| %>
+<%= form_for(@book, url: books_path) do |f| %>
+  <% if @book.errors.any? %>
+  <div id="error_explanation">
+  <h2><%= @book.errors.count %>errors prohibited this obj from being saved:</h2>
+     <ul>
+     <% @book.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+    <% end %>
+    </ul>
+    </div>
+  <% end %>
+
 
   <h4>Title</h4>
   <%= f.text_field :title %>
